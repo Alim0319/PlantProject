@@ -1,0 +1,601 @@
+/*Orbitron Font*/
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&display=swap");
+
+.font-orbitron {
+  font-family: "Orbitron", sans-serif;
+}
+
+/*CSS Variables for better performance and for many used values*/
+:root {
+  --color-orange: #fbb00e;
+  --color-black: black;
+  --color-white: white;
+}
+
+.explore-textp {
+  white-space: pre;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*Target all elements to use these styles*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #252525;
+  min-height: 100vh;
+  min-width: 85rem;
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  background-color: #2e2e2e;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.mercury-logo {
+  width: 100px;
+  height: 80px;
+  margin: 10px 0 5px -400px;
+}
+
+.nav-items {
+  color: var(--color-orange);
+  list-style: none;
+  font-size: x-large;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/*Nav items styling*/
+a {
+  color: var(--color-orange);
+  text-decoration: none;
+}
+
+.get--started,
+.explore,
+.facts,
+.gallery,
+.contact {
+  padding-right: 80px;
+  cursor: pointer;
+}
+
+.intro-title {
+  color: var(--color-orange);
+}
+
+#intro-section {
+  display: flex;
+  width: 100%;
+}
+
+.left-flex {
+  background-color: var(--color-black);
+  width: 50%;
+  height: 600px;
+  padding: 150px 0 0 150px;
+}
+
+.intro-text {
+  color: var(--color-white);
+  font-size: larger;
+  display: flex;
+  align-items: start;
+  padding: 10px 100px 0 0;
+}
+
+.right-flex {
+  background-color: var(--color-black);
+  width: 50%;
+  height: 600px;
+  display: flex;
+}
+
+.planet-details {
+  background-color: var(--color-black);
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.planet-title {
+  color: var(--color-orange);
+  text-transform: uppercase;
+  font-size: medium;
+  margin-bottom: 10px;
+}
+
+.planet-distance,
+.planet-orbit-time,
+.planet-orbit-duration {
+  color: var(--color-white);
+  font-size: large;
+}
+
+.planet-type {
+  color: var(--color-white);
+  font-size: medium;
+}
+
+#get-started {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  color: var(--color-orange);
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin: 300px auto 0 auto;
+}
+
+#watch-this {
+  position: absolute;
+  margin: 230px 0 0 380px;
+}
+
+#character {
+  width: 500px;
+  height: 500px;
+  margin: 100px 0 -750px 150px;
+}
+
+#video {
+  /*These margins doesn't make sense but they work for how we want it to look like*/
+  margin: 100px;
+  margin-left: 723px;
+}
+
+.explore1 {
+  width: 100%;
+  height: 350px;
+  display: flex;
+}
+
+.explore-wrapper,
+.mercury1 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#explore-title {
+  color: var(--color-orange);
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 100px auto 0 auto;
+}
+
+/* Sun system sun and Mercury*/
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  /* Set the distance between the viewer and the Z axis */
+  perspective: 1000px;
+  /* Set the origin perspective as 60% on the X axis and 50% on the Y axis */
+  perspective-origin: 60% 50%;
+  /* Rotate the element counter clockwise by 10 degrees */
+  transform: rotate(-10deg);
+}
+
+.wrapper > div {
+  position: relative;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  height: 0;
+}
+
+.sun {
+  width: 250px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 125px !important;
+}
+
+.sun .star {
+  width: 250px;
+  height: 250px;
+  background: url(./Pictures/sunnn.png) no-repeat;
+  background-size: cover;
+  border-radius: 250px;
+  margin: 0 auto;
+  animation: spinsun 40s infinite linear;
+}
+
+.sun .star:hover {
+  width: 300px;
+  height: 300px;
+}
+
+.planet {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  animation-iteration-count: infinite;
+  overflow: hidden;
+}
+
+.mercury {
+  position: absolute;
+  width: 400px;
+  z-index: 2;
+  animation: orbitmercury 12s infinite linear;
+  top: -7.5px;
+}
+
+@keyframes orbitmercury {
+  0% {
+    z-index: 2;
+    transform: rotateY(0);
+  }
+  49% {
+    z-index: 2;
+  }
+  50% {
+    z-index: -2;
+  }
+  99% {
+    z-index: -2;
+  }
+  100% {
+    z-index: 2;
+    transform: rotateY(360deg);
+  }
+}
+
+.mercury .planet:hover {
+  width: 120px;
+  height: 120px;
+}
+
+.mercury .planet {
+  width: 25px;
+  height: 25px;
+  background-image: url(./Pictures/MercuryPlanet.png);
+  animation: anti-spin 12s infinite linear;
+}
+
+.mercury .shadow {
+  animation: shadow 12s infinite linear;
+}
+
+@keyframes spinsun {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes anti-spin {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+@keyframes anti-spin-rings {
+  from {
+    transform: rotateY(0) rotateX(73deg);
+  }
+  to {
+    transform: rotateY(-360deg) rotateX(73deg);
+  }
+}
+
+/*Mercury zoom*/
+.mercury-wrapper {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  margin-top: 0px;
+  perspective: 1000px;
+  perspective-origin: 60% 50%;
+  transform: rotate(-10deg);
+}
+
+.mercury-wrapper > div {
+  position: relative;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  height: 0;
+}
+
+.mercury2 {
+  width: 250px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 125px !important;
+}
+
+.mercury2 .star1 {
+  width: 250px;
+  height: 250px;
+  background: url(./Pictures/MercuryPlanet.png) no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border-radius: 250px;
+  margin: 0 auto;
+  animation: spinsun1 40s infinite linear;
+}
+
+.mercury2 .star1:hover {
+  width: 300px;
+  height: 300px;
+}
+
+/*Mercury zoom Animation*/
+@keyframes spinsun1 {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.explore-title {
+  color: var(--color-orange);
+  padding: 0 20px 20px 47px;
+}
+
+.explore-text {
+  color: var(--color-white);
+  padding: 100px 0 0 0;
+  font-size: x-large;
+}
+
+#facts-title {
+  color: var(--color-orange);
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "Orbitron";
+  text-align: center;
+  margin: 300px auto 0 auto;
+  padding-bottom: 50px;
+}
+
+.facts-wrapper {
+  display: flex;
+  /*flex-wrap to make them go underneath each other*/
+  flex-wrap: wrap;
+  width: 1500px;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+.fact-1 {
+  margin: 0 20px 20px 0;
+}
+
+.fact-1,
+.fact-2,
+.fact-3,
+.fact-4,
+.fact-5,
+.fact-6,
+.fact-7,
+.fact-8,
+.fact-9,
+.fact-10 {
+  background-color: var(--color-black);
+  width: 250px;
+  height: 400px;
+  color: var(--color-white);
+  border: 6px solid var(--color-orange);
+  border-radius: 10px;
+}
+
+.fact-1-number,
+.fact-2-number,
+.fact-3-number,
+.fact-4-number,
+.fact-5-number,
+.fact-6-number,
+.fact-7-number,
+.fact-8-number,
+.fact-9-number,
+.fact-10-number {
+  color: var(--color-orange);
+  text-align: center;
+}
+
+.fact-1-title,
+.fact-2-title,
+.fact-3-title,
+.fact-4-title,
+.fact-5-title,
+.fact-6-title,
+.fact-7-title,
+.fact-8-title,
+.fact-9-title,
+.fact-10-title {
+  text-align: center;
+  font-size: large;
+  font-weight: 800;
+  border: 2px solid var(--color-orange);
+}
+
+.fact-1-text,
+.fact-2-text,
+.fact-3-text,
+.fact-4-text,
+.fact-5-text,
+.fact-6-text,
+.fact-7-text,
+.fact-8-text,
+.fact-9-text,
+.fact-10-text {
+  padding: 20px;
+  font-size: large;
+}
+
+/*Take priority over the old font size*/
+.fact-3-text {
+  font-size: 14px;
+}
+
+.fact-2,
+.fact-3,
+.fact-4,
+.fact-5,
+.fact-6,
+.fact-7,
+.fact-8,
+.fact-9,
+.fact-10 {
+  margin-right: 20px;
+}
+
+#gallery-title {
+  color: var(--color-orange);
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin: 300px auto 0 auto;
+  padding-bottom: 50px;
+}
+
+.gallery-text {
+  margin: 0 auto;
+  padding: 100px 20px;
+  color: var(--color-white);
+  font-size: 20px;
+}
+
+.mercuryGallery {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  width: calc(16.5% * 5);
+  animation: infinite mercury 15s linear;
+  margin-top: 100px;
+}
+
+.mercury-photo {
+  margin-top: 10%;
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  display: block;
+  border-radius: 3%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
+}
+
+@keyframes mercury {
+  0% {
+    transform: perspective(0px) translateX(0);
+  }
+  100% {
+    transform: perspective(10px) translateX(-100%);
+  }
+}
+
+.mercury-photo:hover {
+  outline: 3px solid var(--color-white);
+  width: 300px;
+  height: 250px;
+  transform: scale(1.05) translateY(-20px);
+}
+
+.hover-text1,
+.hover-text2,
+.hover-text3,
+.hover-text4,
+.hover-text5 {
+  position: absolute;
+  bottom: 50px;
+  color: var(--color-white);
+  width: 480px;
+  height: 30px;
+  transition: 0.5s ease;
+  opacity: 0;
+  font-size: 16px;
+  transition: opacity 0.5s;
+  text-align: center;
+}
+
+.mercury-photo:hover ~ .hover-text1,
+.mercury-photo:hover ~ .hover-text2,
+.mercury-photo:hover ~ .hover-text3,
+.mercury-photo:hover ~ .hover-text4,
+.mercury-photo:hover ~ .hover-text5 {
+  opacity: 1;
+}
+
+.bottom {
+  background-color: var(--color-black);
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 300px;
+}
+
+.bottom #contact {
+  color: var(--color-orange);
+  justify-content: center;
+  text-align: center;
+  font-size: 48px;
+}
+
+.bottom p {
+  justify-content: flex-end;
+  text-align: end;
+  margin-right: 100px;
+  color: var(--color-orange);
+}
+
+.bottom .github-button {
+  position: relative;
+  font-size: 24px;
+  left: 78%;
+  align-items: flex-end;
+  width: 170px;
+  height: 50px;
+  border-radius: 5px;
+  color: var(--color-white);
+}
