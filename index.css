@@ -30,7 +30,7 @@ html {
 body {
   background-color: #252525;
   min-height: 100vh;
-  min-width: 85rem;
+  min-width: 100vh;
 }
 
 nav {
@@ -173,7 +173,7 @@ a {
 #video {
   /*These margins doesn't make sense but they work for how we want it to look like*/
   margin: 100px;
-  margin-left: 723px;
+  margin-left: 700px;
 }
 
 .explore1 {
